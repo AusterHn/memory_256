@@ -5,8 +5,8 @@ const champData = <HTMLInputElement> document.getElementById("data")
 const champCtrl = <HTMLInputElement> document.getElementById("ctrl")
 const boutonGo = <HTMLButtonElement> document.getElementById("go")
 
-if (!ctx || !champPos || !champData || !champCtrl || !boutonGo) {
-    throw new Error("Certains éléments graphiques n'ont pas été trouvés sur la page !")
+if (!ctx || !champPos || !champData || !champCtrl || !boutonGo || parseInt(champPos.value) <= 0 || parseInt(champPos.value) > 256 || parseInt(champData.value) < 0 || parseInt(champData.value) > 255 || parseInt(champCtrl.value) < 0 || parseInt(champCtrl.value) > 1) {
+    throw new Error("Certains éléments graphiques n'ont pas été trouvés sur la page ou Erreur sur les entrées utilisateur!")
 }
 //fonction pour dessiner une mémoire ainsi les buffers (adresse, donnée et controle)
 //chaque case de la mémoire est d'abord initialiser à 0x00
