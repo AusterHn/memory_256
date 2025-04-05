@@ -5,6 +5,9 @@ var champPos = document.getElementById("pos");
 var champData = document.getElementById("data");
 var champCtrl = document.getElementById("ctrl");
 var boutonGo = document.getElementById("go");
+if (!ctx || !champPos || !champData || !champCtrl || !boutonGo || parseInt(champPos.value) <= 0 || parseInt(champPos.value) > 256 || parseInt(champData.value) < 0 || parseInt(champData.value) > 255 || parseInt(champCtrl.value) < 0 || parseInt(champCtrl.value) > 1) {
+    throw new Error("Certains éléments graphiques n'ont pas été trouvés sur la page ou Erreur sur les entrées utilisateur!");
+}
 //fonction pour dessiner une mémoire ainsi les buffers (adresse, donnée et controle)
 //chaque case de la mémoire est d'abord initialiser à 0x00
 //le buffer d'adresses est initialisé NaN 
@@ -46,6 +49,10 @@ function drawMemory() {
 }
 drawMemory();
 function start() {
+    //vérification d'erreur sur les intervalles auxquelles doivent appartenir les données saisies par l'utilisateur
+    if (parseInt(champPos.value) <= 0 || parseInt(champPos.value) > 256 || parseInt(champData.value) < 0 || parseInt(champData.value) > 255 || parseInt(champCtrl.value) < 0 || parseInt(champCtrl.value) > 1) {
+        throw new Error("Erreur sur les entrées utilisateur. Vérifiez les valeurs saisies !");
+    }
     ctx.clearRect(115, 567, 50, 25);
     ctx.clearRect(245, 567, 50, 25);
     ctx.clearRect(375, 567, 50, 25);
