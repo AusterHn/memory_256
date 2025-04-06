@@ -12,6 +12,6 @@ La mémoire est représenté sous la forme d'un élément HTML Canvas. La plage 
             - le buffer de données va contenir (en hexadécimale) la valeur de la donnée renseignée
             - le buffer de controle va contenir la valeur 0,
         -Dans le cas d'un reset mémoire,
-            - renseignez quand même les champs de position et de donnée,
-            - mettre la valeur 1 dans le champ "Instruction de contrôle",
-            - La mémoire ainsi que les buffers seront automatique remis à leur état initial.
+            -renseignez quand même les champs de position et de donnée,
+            -mettre la valeur 1 dans le champ "Instruction de contrôle",
+            -La mémoire ainsi que les buffers seront automatique remis à lleur état initial.
