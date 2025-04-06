@@ -61,7 +61,7 @@ function start() {
         ctx.clearRect(375, 567, 50, 25)
         //Remplissage du buffer d'addresse
         //Les adresses commencent à 0 dans la mémoire 
-        //Donc pour avoir la bonne adressse, il faudra soustraire 1 de la postion renseignée
+        //Donc pour avoir la bonne adressse, il faudra ôter 1 de la postion renseignée
         ctx.fillText("0x"+(parseInt(champPos.value)-1).toString(16).toUpperCase(), 126, 582)
         //Remplissage du buffer de données
         ctx.fillText("0x"+parseInt(champData.value).toString(16).toUpperCase(), 256, 582)
