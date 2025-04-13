@@ -39,11 +39,11 @@ function drawMemory() {
     ctx.stroke();
     ctx.strokeRect(375, 567, 50, 25);
     ctx.fillText(NaN.toString(), 386, 582);
-    ctx.strokeText("Buffer de contrôle", 345, 607);
+    ctx.fillText("Buffer de contrôle", 345, 607);
     for (var i = 0; i < 32; ++i) {
         for (var j = 0; j < 8; ++j) {
             ctx.font = "15px calibri";
-            ctx.strokeText("0x00", 60 + j * (440 / 8), 20 + i * (460 / 31));
+            ctx.fillText("0x00", 60 + j * (440 / 8), 20 + i * (460 / 31));
         }
     }
 }
@@ -78,7 +78,7 @@ function start() {
                 for (var j = 1; j <= 8; ++j) {
                     if (step == parseInt(champPos.value)) {
                         ctx.clearRect((60 + (j - 1) * (440 / 8)), (20 + (i - 1) * (460 / 31)) - 9, 40, 10);
-                        ctx.strokeText("0x" + parseInt(champData.value).toString(16).toUpperCase(), 60 + (j - 1) * (440 / 8), 20 + (i - 1) * (460 / 31));
+                        ctx.fillText("0x" + parseInt(champData.value).toString(16).toUpperCase(), 60 + (j - 1) * (440 / 8), 20 + (i - 1) * (460 / 31));
                     }
                     step++;
                 }
