@@ -16,7 +16,7 @@ if (!ctx || !champPos || !champData || !champCtrl || !boutonGo) {
 function drawMemory() {
     for (let i = 0 ; i < 256; i+=8) {
         ctx.font = "15px calibri"
-        ctx.strokeText("0x"+(i.toString(16).toUpperCase()), 15, 20+(i/8)*(460/31))
+        ctx.fillText("0x"+(i.toString(16).toUpperCase()), 15, 20+(i/8)*(460/31))
     }
     ctx.strokeRect(50, 7, 440, 480)
     ctx.beginPath()
@@ -25,25 +25,25 @@ function drawMemory() {
     ctx.stroke()
     ctx.strokeRect(115, 567, 50, 25)
     ctx.fillText(NaN.toString(), 126, 582)
-    ctx.strokeText("Buffer d'adresses",85, 607)
+    ctx.fillText("Buffer d'adresses",85, 607)
     ctx.beginPath()
     ctx.moveTo(270, 487)
     ctx.lineTo(270, 567)
     ctx.stroke()
     ctx.strokeRect(245, 567, 50, 25)
     ctx.fillText(NaN.toString(), 256, 582)
-    ctx.strokeText("Buffer de données", 215, 607)
+    ctx.fillText("Buffer de données", 215, 607)
     ctx.beginPath()
     ctx.moveTo(400, 487)
     ctx.lineTo(400, 567)
     ctx.stroke()
     ctx.strokeRect(375, 567, 50, 25)
     ctx.fillText(NaN.toString(), 386, 582)
-    ctx.strokeText("Buffer de contrôle", 345, 607)
+    ctx.fillText("Buffer de contrôle", 345, 607)
     for (let i = 0; i < 32; ++i) {
         for (let j = 0; j < 8; ++j) {
             ctx.font = "15px calibri"
-            ctx.strokeText("0x00", 60+j*(440/8), 20+i*(460/31))
+            ctx.fillText("0x00", 60+j*(440/8), 20+i*(460/31))
         }
     }
 }
@@ -80,7 +80,7 @@ function start() {
                 for (let j = 1; j <= 8; ++j) {
                     if (step == parseInt(champPos.value)){
                         ctx.clearRect((60+(j-1)*(440/8)), (20+(i-1)*(460/31))-9, 40, 10)
-                        ctx.strokeText("0x"+parseInt(champData.value).toString(16).toUpperCase(), 60+(j-1)*(440/8), 20+(i-1)*(460/31))
+                        ctx.fillText("0x"+parseInt(champData.value).toString(16).toUpperCase(), 60+(j-1)*(440/8), 20+(i-1)*(460/31))
                     }
                     step++
                 }
